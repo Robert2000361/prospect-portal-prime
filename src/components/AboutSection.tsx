@@ -11,9 +11,13 @@ const AboutSection = () => (
       <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
         {/* Left: About text + Education */}
         <div>
-          <p className="mb-8 text-base leading-relaxed text-muted-foreground">
-            {personalInfo.about}
-          </p>
+          <div className="mb-8 space-y-4">
+            {personalInfo.about.split("\n\n").map((paragraph, i) => (
+              <p key={i} className="text-base leading-relaxed text-muted-foreground">
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
           <h3 className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-foreground">
             <GraduationCap className="h-4 w-4 text-primary" />
