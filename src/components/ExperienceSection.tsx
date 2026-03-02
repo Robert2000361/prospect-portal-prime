@@ -1,11 +1,13 @@
 import { experience } from "@/data/portfolio";
-import SectionHeading from "./SectionHeading";
 import { Briefcase } from "lucide-react";
 
 const ExperienceSection = () => (
-  <section id="experience" className="py-24">
+  <section id="experience" className="py-24 bg-card/30">
     <div className="mx-auto max-w-6xl px-6">
-      <SectionHeading tag="experience" title="Work Experience" />
+      <h2 className="mb-14 text-center text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        Experience
+      </h2>
+
       <div className="mx-auto max-w-3xl space-y-8">
         {experience.map((exp) => (
           <div
@@ -20,13 +22,13 @@ const ExperienceSection = () => (
               {exp.role}
             </h3>
             <p className="text-sm text-muted-foreground">{exp.company}</p>
-            <ul className="mt-3 space-y-1.5">
+            <ul className="mt-3 space-y-2">
               {exp.bullets.map((b, i) => (
                 <li
                   key={i}
                   className="flex items-start gap-2 text-sm text-secondary-foreground"
                 >
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
                   {b}
                 </li>
               ))}
