@@ -1,7 +1,7 @@
 import { personalInfo } from "@/data/portfolio";
 import { ChevronDown, FileDown } from "lucide-react";
 import Particles from "./Particles";
-
+import profileImg from "@/assets/profile.jpg";
 const HeroSection = () => {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
@@ -11,11 +11,9 @@ const HeroSection = () => {
       <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
         {/* Avatar placeholder */}
         <div
-          className="animate-scale-in mx-auto mb-8 h-36 w-36 rounded-full border-2 border-primary/40 bg-secondary p-1"
+          className="animate-scale-in mx-auto mb-8 h-36 w-36 overflow-hidden rounded-full border-2 border-primary/40 p-1"
         >
-          <div className="flex h-full w-full items-center justify-center rounded-full bg-card text-4xl font-bold text-primary">
-            RK
-          </div>
+          <img src={profileImg} alt={personalInfo.name} className="h-full w-full rounded-full object-cover" />
         </div>
 
         <h1
