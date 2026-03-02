@@ -2,9 +2,9 @@ export const personalInfo = {
   name: "Robert Kamal",
   title: "Junior DevOps Engineer",
   location: "Cairo, Egypt",
-  email: "robert.kamal@example.com",
-  github: "https://github.com/robertkamal",
-  linkedin: "https://linkedin.com/in/robertkamal",
+  email: "robertkamal00@gmail.com",
+  github: "https://github.com/Robert2000361",
+  linkedin: "https://linkedin.com/in/robertkamaladly",
   summary:
     "Building reliable infrastructure and automating everything — from Linux environments and Docker containers to CI/CD pipelines. Passionate about bridging the gap between development and operations with clean, repeatable, and scalable solutions.",
   about:
