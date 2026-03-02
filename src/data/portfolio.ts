@@ -6,59 +6,52 @@ export const personalInfo = {
   github: "https://github.com/robertkamal",
   linkedin: "https://linkedin.com/in/robertkamal",
   summary:
-    "Aspiring DevOps engineer with a solid foundation in Linux administration, networking (CCNA), cloud fundamentals (AWS), Bash automation, Docker containerization, and CI/CD pipeline concepts. Passionate about building reliable infrastructure and automating everything.",
+    "Building reliable infrastructure and automating everything — from Linux environments and Docker containers to CI/CD pipelines. Passionate about bridging the gap between development and operations with clean, repeatable, and scalable solutions.",
+  about:
+    "I'm a Junior DevOps Engineer with a solid foundation in Linux administration, networking (CCNA), cloud fundamentals (AWS), and container technologies. With hands-on experience automating workflows using Bash and Docker, I focus on building infrastructure that's reliable, reproducible, and easy to maintain. I'm committed to continuous learning and contributing to teams that value automation and operational excellence.",
 };
 
 export const skills = [
-  {
-    category: "DevOps & CI/CD",
-    items: ["Jenkins", "Git", "GitHub Workflows", "CI/CD Pipelines"],
-  },
-  {
-    category: "Containers",
-    items: ["Docker", "Docker Compose"],
-  },
-  {
-    category: "OS & Scripting",
-    items: ["Linux", "Bash", "Shell Scripting"],
-  },
-  {
-    category: "Cloud",
-    items: ["AWS Fundamentals", "EC2", "S3"],
-  },
-  {
-    category: "Networking",
-    items: ["TCP/IP", "Routing & Switching", "CCNA Foundation", "DNS"],
-  },
-  {
-    category: "Automation",
-    items: ["Ansible", "Infrastructure as Code"],
-  },
+  { category: "OS & Scripting", items: ["Linux", "Bash", "Shell Scripting"] },
+  { category: "Containers", items: ["Docker", "Docker Compose"] },
+  { category: "CI/CD", items: ["Jenkins", "Git", "GitHub Actions", "CI/CD Pipelines"] },
+  { category: "Cloud", items: ["AWS", "EC2", "S3", "Cloud Fundamentals"] },
+  { category: "Networking", items: ["TCP/IP", "Routing & Switching", "CCNA", "DNS"] },
+  { category: "Automation", items: ["Ansible", "Infrastructure as Code"] },
+];
+
+export const techStackBadges = [
+  "Linux", "Bash", "Docker", "Jenkins", "Git", "AWS",
+  "Ansible", "Networking", "CI/CD", "Shell Scripting",
+  "Docker Compose", "GitHub Actions",
 ];
 
 export const projects = [
   {
     title: "Task Manager CLI",
     description:
-      "A command-line task manager built in Bash for tracking daily tasks with add, delete, list, and search operations.",
+      "Built a command-line task management tool in Bash to streamline daily workflow tracking. Supports add, delete, list, and search operations with persistent file-based storage.",
     tags: ["Bash", "CLI", "Linux"],
     github: "https://github.com/robertkamal/task-manager-cli",
+    demo: null,
     status: "completed" as const,
   },
   {
-    title: "Docker Containerization",
+    title: "Docker Multi-App Containerization",
     description:
-      "Containerized 2+ small applications using Docker, creating optimized Dockerfiles and multi-stage builds.",
-    tags: ["Docker", "Containers", "DevOps"],
+      "Containerized multiple small applications using Docker with optimized multi-stage builds, reducing image sizes by ~40% and ensuring consistent environments across dev and production.",
+    tags: ["Docker", "Containers", "DevOps", "Multi-Stage Builds"],
     github: "https://github.com/robertkamal/docker-projects",
+    demo: null,
     status: "completed" as const,
   },
   {
-    title: "CI/CD Pipeline Lab",
+    title: "CI/CD Pipeline Automation Lab",
     description:
-      "Building an automated CI/CD pipeline using Jenkins and GitHub webhooks for continuous integration and delivery.",
-    tags: ["Jenkins", "GitHub", "CI/CD", "Automation"],
+      "Designing an end-to-end CI/CD pipeline using Jenkins with GitHub webhooks for automated build, test, and deployment workflows. Includes Jenkinsfile-based pipeline as code.",
+    tags: ["Jenkins", "GitHub", "CI/CD", "Automation", "Webhooks"],
     github: null,
+    demo: null,
     status: "in-progress" as const,
   },
 ];
@@ -69,10 +62,10 @@ export const experience = [
     company: "Digital Pioneers Initiative / Digilians",
     date: "Jan 2025 — Present",
     bullets: [
-      "Administered and troubleshot 10+ Linux-based lab environments",
-      "Built 5+ Bash automation scripts, reducing manual steps by ~30%",
-      "Containerized 2+ applications using Docker with optimized images",
-      "Designing CI/CD pipeline labs with Jenkins & GitHub (in progress)",
+      "Administered and troubleshot 10+ Linux-based lab environments, ensuring 99% uptime for training sessions",
+      "Developed 5+ Bash automation scripts that reduced manual configuration steps by approximately 30%",
+      "Containerized 2+ applications using Docker with optimized multi-stage builds for smaller image footprints",
+      "Currently designing CI/CD pipeline labs with Jenkins & GitHub webhooks for automated integration workflows",
     ],
   },
 ];
@@ -96,9 +89,7 @@ export const training = [
 
 export const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
   { label: "Contact", href: "#contact" },
 ];
