@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { navLinks } from "@/data/portfolio";
+import { navLinks } from "@/hooks/usePortfolioData";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
