@@ -141,8 +141,6 @@ export function TagInput({ value, onChange, placeholder }: { value: string[]; on
 }
 
 export function useInvalidate() {
-  // Lightweight: just reload react-query cache for portfolio
-  const { useQueryClient } = require("@tanstack/react-query");
   const qc = useQueryClient();
   return () => qc.invalidateQueries({ queryKey: ["portfolio"] });
 }
