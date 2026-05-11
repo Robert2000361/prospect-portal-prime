@@ -26,7 +26,7 @@ export function CrudPanel<T extends { id?: string; sort_order?: number }>({ cfg 
     const orderCol = (cfg.orderBy as string) ?? "sort_order";
     const { data, error } = await supabase.from(cfg.table as any).select("*").order(orderCol);
     if (error) toast.error(error.message);
-    setRows((data ?? []) as T[]);
+    setRows((data ?? []) as unknown as T[]);
     setLoading(false);
   };
 
