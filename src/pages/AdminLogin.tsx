@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
@@ -7,7 +7,6 @@ import { Loader2, ShieldAlert } from "lucide-react";
 
 export default function AdminLogin() {
   const { user, isAdmin, loading } = useAuth();
-  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -24,6 +23,7 @@ export default function AdminLogin() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
     setSubmitting(true);
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setSubmitting(false);
@@ -32,7 +32,7 @@ export default function AdminLogin() {
       return;
     }
     toast.success("Signed in. Verifying admin access…");
-    setTimeout(() => navigate("/admin/dashboard"), 300);
+    // AuthProvider will update state and the <Navigate> above will redirect.
   };
 
   return (
