@@ -14,6 +14,7 @@ import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 const Index = () => {
   const { data } = usePortfolioData();
+  const qc = useQueryClient();
   const primary = data?.settings.primary_color;
   const siteTitle = data?.settings.site_title;
 
@@ -21,6 +22,14 @@ const Index = () => {
     if (primary) document.documentElement.style.setProperty("--primary", primary);
     if (siteTitle) document.title = siteTitle;
   }, [primary, siteTitle]);
+
+  useEffect(() => {
+    const tables = ["identity","stats","experience","projects","project_images","skills","education","current_study","certifications","site_settings"];
+    const ch = supabase.channel("portfolio-live");
+    tables.forEach((t) => ch.on("postgres_changes", { event: "*", schema: "public", table: t }, () => qc.invalidateQueries({ queryKey: ["portfolio"] })));
+    ch.subscribe();
+    return () => { supabase.removeChannel(ch); };
+  }, [qc]);
 
   return (
     <div className="noise-bg min-h-screen bg-background">
