@@ -211,12 +211,13 @@ type Identity = {
   linkedin_url: string | null;
   twitter_url: string | null;
   typewriter_titles: string[];
+  updated_at?: string | null;
 };
 
 const empty: Identity = {
   name: "", title: "", bio: "", avatar_url: null, cv_url: null,
   email: "", phone: "", location: "", github_url: "", linkedin_url: "", twitter_url: "",
-  typewriter_titles: [],
+  typewriter_titles: [], updated_at: null,
 };
 
 export default function IdentityPanel() {
