@@ -315,26 +315,12 @@ export default function IdentityPanel() {
         </div>
 
         <div className="mt-5 border-t border-border pt-5">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-foreground">CV / Resume (PDF)</p>
-          <div className="flex flex-wrap items-center gap-3">
-            <FileUploadButton
-              bucket="cv-files"
-              accept="application/pdf"
-              maxMB={10}
-              label="Upload CV"
-              onUploaded={(url) => setData({ ...data, cv_url: url })}
-            />
-            {data.cv_url && (
-              <>
-                <a href={data.cv_url} target="_blank" rel="noopener noreferrer" className={btnGhost}>
-                  Open current CV
-                </a>
-                <button className={btnDanger} onClick={() => setData({ ...data, cv_url: null })}>
-                  <Trash2 className="h-3 w-3" /> Remove
-                </button>
-              </>
-            )}
-          </div>
+          <CvUploader
+            identityId={data.id}
+            cvUrl={data.cv_url}
+            updatedAt={data.updated_at}
+            onSaved={(url, updatedAt) => setData((d) => ({ ...d, cv_url: url, updated_at: updatedAt }))}
+          />
         </div>
       </Card>
     </div>
